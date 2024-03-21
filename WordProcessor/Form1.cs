@@ -1085,6 +1085,27 @@ namespace WordProcessor
             // Show the input form as a modal dialog, which means the user cannot interact with the parent form until the input form is closed
             inputForm.ShowDialog();
         }
+        public void AddLineNumbering()
+        {
+            // Get the lines of text in the fileTextOutput control
+            string[] lines = fileTextOutput.Lines;
+
+            // Create a StringBuilder to hold the modified text with line numbering
+            StringBuilder sb = new StringBuilder();
+
+            // Iterate over each line and append the line number followed by a space
+            // then append the original line text
+            for (int i = 0; i < lines.Length; i++)
+            {
+                sb.AppendLine($"{i + 1}. {lines[i]}");
+            }
+
+            // Set the modified text with line numbering to the fileTextOutput control
+            fileTextOutput.Text = sb.ToString();
+
+            // Add the modified text to the redo stack
+            AddToRedoStack(fileTextOutput.Text);
+        }
         public void AddEndEveryLine()
         {
             // Create a new instance of the Form class for the input box
@@ -1840,7 +1861,9 @@ namespace WordProcessor
             // Start a new process to open the default browser and navigate to the URL
             System.Diagnostics.Process.Start(url);
         }
-        //INPUTS *****************************************************************************************************************************
+        //INPUTS ***********************************************************************************************************************************************************************************************************************************************************
+        //**********************************************************************************************************************************************************************************************************************************************************************
+        //**********************************************************************************************************************************************************************************************************************************************************************
 
         //on form open
         private static string finalReadString;
@@ -2208,7 +2231,10 @@ namespace WordProcessor
             FindChangeTextColor();
         }
 
-
+        private void addNumberToEveryLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddLineNumbering();
+        }
     }
 
 }
