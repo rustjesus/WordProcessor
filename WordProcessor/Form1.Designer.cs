@@ -67,6 +67,7 @@ namespace WordProcessor
             this.addIndentEveryXLinesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addToEndOfEveryLineToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addToStartOfEveryLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNumberToEveryLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.View_toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toggleStatusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modified_label2 = new System.Windows.Forms.Label();
@@ -82,7 +83,6 @@ namespace WordProcessor
             this.label2 = new System.Windows.Forms.Label();
             this.findNext_button1 = new System.Windows.Forms.Button();
             this.findLast_button1 = new System.Windows.Forms.Button();
-            this.addNumberToEveryLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -407,6 +407,13 @@ namespace WordProcessor
             this.addToStartOfEveryLineToolStripMenuItem.Text = "Add To Start Of Every Line";
             this.addToStartOfEveryLineToolStripMenuItem.Click += new System.EventHandler(this.addToStartOfEveryLineToolStripMenuItem_Click);
             // 
+            // addNumberToEveryLineToolStripMenuItem
+            // 
+            this.addNumberToEveryLineToolStripMenuItem.Name = "addNumberToEveryLineToolStripMenuItem";
+            this.addNumberToEveryLineToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.addNumberToEveryLineToolStripMenuItem.Text = "Add Number To Every Line";
+            this.addNumberToEveryLineToolStripMenuItem.Click += new System.EventHandler(this.addNumberToEveryLineToolStripMenuItem_Click);
+            // 
             // View_toolStripDropDownButton3
             // 
             this.View_toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -421,7 +428,7 @@ namespace WordProcessor
             // toggleStatusBarToolStripMenuItem
             // 
             this.toggleStatusBarToolStripMenuItem.Name = "toggleStatusBarToolStripMenuItem";
-            this.toggleStatusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.toggleStatusBarToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.toggleStatusBarToolStripMenuItem.Text = "Toggle Status Bar";
             this.toggleStatusBarToolStripMenuItem.Click += new System.EventHandler(this.toggleStatusBarToolStripMenuItem_Click);
             // 
@@ -472,7 +479,7 @@ namespace WordProcessor
             this.ver_label.Name = "ver_label";
             this.ver_label.Size = new System.Drawing.Size(37, 15);
             this.ver_label.TabIndex = 15;
-            this.ver_label.Text = "v0.9.3";
+            this.ver_label.Text = "v0.9.4";
             // 
             // wordwrap_label2
             // 
@@ -554,13 +561,6 @@ namespace WordProcessor
             this.findLast_button1.Text = "Find Last";
             this.findLast_button1.UseVisualStyleBackColor = true;
             this.findLast_button1.Click += new System.EventHandler(this.findLast_button1_Click);
-            // 
-            // addNumberToEveryLineToolStripMenuItem
-            // 
-            this.addNumberToEveryLineToolStripMenuItem.Name = "addNumberToEveryLineToolStripMenuItem";
-            this.addNumberToEveryLineToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.addNumberToEveryLineToolStripMenuItem.Text = "Add Number To Every Line";
-            this.addNumberToEveryLineToolStripMenuItem.Click += new System.EventHandler(this.addNumberToEveryLineToolStripMenuItem_Click);
             // 
             // Form1
             // 
