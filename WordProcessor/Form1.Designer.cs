@@ -46,6 +46,7 @@ namespace WordProcessor
             this.highlightCodeSyntaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findAndHighlightTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAVEDTextColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uNSAVEDTextColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.spellCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordWrapOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +85,6 @@ namespace WordProcessor
             this.label2 = new System.Windows.Forms.Label();
             this.findNext_button1 = new System.Windows.Forms.Button();
             this.findLast_button1 = new System.Windows.Forms.Button();
-            this.uNSAVEDTextColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,6 +223,13 @@ namespace WordProcessor
             this.sAVEDTextColorToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.sAVEDTextColorToolStripMenuItem.Text = "SAVED Text Color";
             this.sAVEDTextColorToolStripMenuItem.Click += new System.EventHandler(this.sAVEDTextColorToolStripMenuItem_Click);
+            // 
+            // uNSAVEDTextColorToolStripMenuItem
+            // 
+            this.uNSAVEDTextColorToolStripMenuItem.Name = "uNSAVEDTextColorToolStripMenuItem";
+            this.uNSAVEDTextColorToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.uNSAVEDTextColorToolStripMenuItem.Text = "UNSAVED Text Color";
+            this.uNSAVEDTextColorToolStripMenuItem.Click += new System.EventHandler(this.uNSAVEDTextColorToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -490,7 +497,7 @@ namespace WordProcessor
             this.ver_label.Name = "ver_label";
             this.ver_label.Size = new System.Drawing.Size(37, 15);
             this.ver_label.TabIndex = 15;
-            this.ver_label.Text = "v0.9.4";
+            this.ver_label.Text = "v0.9.5";
             // 
             // wordwrap_label2
             // 
@@ -572,13 +579,6 @@ namespace WordProcessor
             this.findLast_button1.Text = "Find Last";
             this.findLast_button1.UseVisualStyleBackColor = true;
             this.findLast_button1.Click += new System.EventHandler(this.findLast_button1_Click);
-            // 
-            // uNSAVEDTextColorToolStripMenuItem
-            // 
-            this.uNSAVEDTextColorToolStripMenuItem.Name = "uNSAVEDTextColorToolStripMenuItem";
-            this.uNSAVEDTextColorToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.uNSAVEDTextColorToolStripMenuItem.Text = "UNSAVED Text Color";
-            this.uNSAVEDTextColorToolStripMenuItem.Click += new System.EventHandler(this.uNSAVEDTextColorToolStripMenuItem_Click);
             // 
             // Form1
             // 
