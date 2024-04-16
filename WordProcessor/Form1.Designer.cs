@@ -45,6 +45,7 @@ namespace WordProcessor
             this.highligherTextColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.highlightCodeSyntaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findAndHighlightTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sAVEDTextColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.spellCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordWrapOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +84,7 @@ namespace WordProcessor
             this.label2 = new System.Windows.Forms.Label();
             this.findNext_button1 = new System.Windows.Forms.Button();
             this.findLast_button1 = new System.Windows.Forms.Button();
+            this.uNSAVEDTextColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,7 +159,9 @@ namespace WordProcessor
             this.textBoxTextColorToolStripMenuItem,
             this.highligherTextColorToolStripMenuItem,
             this.highlightCodeSyntaxToolStripMenuItem,
-            this.findAndHighlightTextToolStripMenuItem});
+            this.findAndHighlightTextToolStripMenuItem,
+            this.sAVEDTextColorToolStripMenuItem,
+            this.uNSAVEDTextColorToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -212,6 +216,13 @@ namespace WordProcessor
             this.findAndHighlightTextToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.findAndHighlightTextToolStripMenuItem.Text = "Find And Highlight Text";
             this.findAndHighlightTextToolStripMenuItem.Click += new System.EventHandler(this.findAndHighlightTextToolStripMenuItem_Click);
+            // 
+            // sAVEDTextColorToolStripMenuItem
+            // 
+            this.sAVEDTextColorToolStripMenuItem.Name = "sAVEDTextColorToolStripMenuItem";
+            this.sAVEDTextColorToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.sAVEDTextColorToolStripMenuItem.Text = "SAVED Text Color";
+            this.sAVEDTextColorToolStripMenuItem.Click += new System.EventHandler(this.sAVEDTextColorToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -562,6 +573,13 @@ namespace WordProcessor
             this.findLast_button1.UseVisualStyleBackColor = true;
             this.findLast_button1.Click += new System.EventHandler(this.findLast_button1_Click);
             // 
+            // uNSAVEDTextColorToolStripMenuItem
+            // 
+            this.uNSAVEDTextColorToolStripMenuItem.Name = "uNSAVEDTextColorToolStripMenuItem";
+            this.uNSAVEDTextColorToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.uNSAVEDTextColorToolStripMenuItem.Text = "UNSAVED Text Color";
+            this.uNSAVEDTextColorToolStripMenuItem.Click += new System.EventHandler(this.uNSAVEDTextColorToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -653,6 +671,8 @@ namespace WordProcessor
         private System.Windows.Forms.ToolStripMenuItem toggleClientScalingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findAndHighlightTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNumberToEveryLineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sAVEDTextColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uNSAVEDTextColorToolStripMenuItem;
     }
 }
 

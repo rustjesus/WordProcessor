@@ -43,11 +43,15 @@ namespace WordProcessor
             //loading start check
             isLoading = true;
 
+            LoadUnsaveTxtTextColor();
+            LoadSaveTxtTextColor();
             modified_label2.Text = "SAVED";
+            modified_label2.ForeColor = savetextColor;
             //get file path from args
             if (_args.Length > 0)
             {
                 modified_label2.Text = "SAVED"; // change here to set it to SAVED when opening via extension
+                modified_label2.ForeColor = savetextColor;
                 if (File.Exists(_args[0]))
                 {
                     //openfile on load (extension)
@@ -361,7 +365,100 @@ namespace WordProcessor
             ClearUndoStack();
 
         }
+        //unsaved text color
+        private void ChangeUnsavedTextColor(Color color)
+        {
+            unsavedtextColor = color;
+            modified_label2.ForeColor = unsavedtextColor;
+            SaveUnsavedTxtTextColor();
+        }
+        private void colorUnsavedTextChangeFunction()
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                ChangeUnsavedTextColor(colorDialog.Color);
+            }
+        }
+        private void SaveUnsavedTxtTextColor()
+        {
+            var color = modified_label2.ForeColor;
+            var data = new { R = color.R, G = color.G, B = color.B };
 
+            var json = JsonConvert.SerializeObject(data);
+
+            // Get the application path and combine it with the file name
+            string fullPath = Path.Combine(Application.StartupPath, "unsavedTxtColor.json");
+
+            // Write the text to the file
+            File.WriteAllText(fullPath, json);
+        }
+        private Color unsavedtextColor;
+        private void LoadUnsaveTxtTextColor()
+        {
+            string jsonFilePath = Path.Combine(Application.StartupPath, "unsavedTxtColor.json");
+            if (File.Exists(jsonFilePath))
+            {
+                var json = File.ReadAllText(jsonFilePath);
+                dynamic data = JsonConvert.DeserializeObject(json);
+
+                if (data != null)
+                {
+                    int r = Convert.ToInt32(data.R);
+                    int g = Convert.ToInt32(data.G);
+                    int b = Convert.ToInt32(data.B);
+                    unsavedtextColor = Color.FromArgb(r, g, b);
+                    modified_label2.ForeColor = unsavedtextColor;
+                }
+            }
+        }
+        //saved text color
+        private void ChangeSaveTextColor(Color color)
+        {
+            modified_label2.ForeColor = color;
+            SaveSaveTxtTextColor();
+        }
+        private void colorSaveTextChangeFunction()
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                ChangeSaveTextColor(colorDialog.Color);
+            }
+        }
+        private void SaveSaveTxtTextColor()
+        {
+            var color = modified_label2.ForeColor;
+            var data = new { R = color.R, G = color.G, B = color.B };
+
+            var json = JsonConvert.SerializeObject(data);
+
+            // Get the application path and combine it with the file name
+            string fullPath = Path.Combine(Application.StartupPath, "savedTxtColor.json");
+
+            // Write the text to the file
+            File.WriteAllText(fullPath, json);
+        }
+        private Color savetextColor;
+        private void LoadSaveTxtTextColor()
+        {
+            string jsonFilePath = Path.Combine(Application.StartupPath, "savedTxtColor.json");
+            if (File.Exists(jsonFilePath))
+            {
+                var json = File.ReadAllText(jsonFilePath);
+                dynamic data = JsonConvert.DeserializeObject(json);
+
+                if (data != null)
+                {
+                    int r = Convert.ToInt32(data.R);
+                    int g = Convert.ToInt32(data.G);
+                    int b = Convert.ToInt32(data.B);
+                    savetextColor = Color.FromArgb(r, g, b);
+                    modified_label2.ForeColor = savetextColor;
+                }
+            }
+        }
+        //textbox
         private void ChangeTextBoxTextColor(Color color)
         {
             fileTextOutput.ForeColor = color;
@@ -1811,6 +1908,7 @@ namespace WordProcessor
         {
             this.Text = "Notepad On CrAcK";
             modified_label2.Text = "SAVED";
+            modified_label2.ForeColor = savetextColor;
         }
 
         private void HideStatusBar()
@@ -1875,6 +1973,7 @@ namespace WordProcessor
             reader.Close();
             this.Text = "Notepad On CrAcK";
             modified_label2.Text = "SAVED";
+            modified_label2.ForeColor = savetextColor;
             ClearUndoStack();
         }
         //on form close
@@ -2025,6 +2124,7 @@ namespace WordProcessor
 
                 this.Text = "* Notepad On CrAcK";
                 modified_label2.Text = "*unsaved*";
+                modified_label2.ForeColor = unsavedtextColor;
             }
         }
 
@@ -2234,6 +2334,21 @@ namespace WordProcessor
         private void addNumberToEveryLineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddLineNumbering();
+        }
+
+        private void modified_label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sAVEDTextColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorSaveTextChangeFunction();
+        }
+
+        private void uNSAVEDTextColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorUnsavedTextChangeFunction();
         }
     }
 
