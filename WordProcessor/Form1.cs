@@ -76,8 +76,11 @@ namespace WordProcessor
             LoadFormSize();
             //LoadFontSizeValue();//load font size
             LoadFontNameFromJson();
+
             //FontSettingsManager.LoadFontSettings();
-            fileTextOutput.Font = new Font(fileTextOutput.Font.FontFamily, fontSize, fileTextOutput.Font.Style);//set font size
+            //fileTextOutput.Font = new Font(fileTextOutput.Font.FontFamily, fontSize, fileTextOutput.Font.Style);//set font size
+            fileTextOutput.Font = new Font(fileTextOutput.Font.FontFamily, 12, fileTextOutput.Font.Style);//set font size
+
             //load and set bold mode
             LoadBoldModeValue();
             if (boldMode == 1)
