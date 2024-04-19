@@ -1188,7 +1188,39 @@ namespace WordProcessor
             // Show the input form as a modal dialog, which means the user cannot interact with the parent form until the input form is closed
             inputForm.ShowDialog();
         }
-        public void AddLineNumbering()
+        public void AddLineNumberingOnlyTextLines()
+        {
+            // Get the lines of text in the fileTextOutput control
+            string[] lines = fileTextOutput.Lines;
+
+            // Create a StringBuilder to hold the modified text with line numbering
+            StringBuilder sb = new StringBuilder();
+
+            // Counter for line numbering
+            int lineNumber = 1;
+
+            // Iterate over each line and append the line number followed by a space
+            // then append the original line text if it's not empty
+            foreach (string line in lines)
+            {
+                if (!string.IsNullOrWhiteSpace(line))
+                {
+                    sb.AppendLine($"{lineNumber}. {line}");
+                    lineNumber++;
+                }
+                else
+                {
+                    sb.AppendLine(); // If the line is empty, just append an empty line
+                }
+            }
+
+            // Set the modified text with line numbering to the fileTextOutput control
+            fileTextOutput.Text = sb.ToString();
+
+            // Add the modified text to the redo stack
+            AddToRedoStack(fileTextOutput.Text);
+        }
+        public void AddLineNumberingAll()
         {
             // Get the lines of text in the fileTextOutput control
             string[] lines = fileTextOutput.Lines;
@@ -2339,7 +2371,7 @@ namespace WordProcessor
 
         private void addNumberToEveryLineToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddLineNumbering();
+            AddLineNumberingAll();
         }
 
         private void modified_label2_Click(object sender, EventArgs e)
@@ -2355,6 +2387,11 @@ namespace WordProcessor
         private void uNSAVEDTextColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             colorUnsavedTextChangeFunction();
+        }
+
+        private void addNumberToEveryUsedLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddLineNumberingOnlyTextLines();
         }
     }
 

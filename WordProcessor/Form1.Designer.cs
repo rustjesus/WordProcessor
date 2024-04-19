@@ -70,6 +70,7 @@ namespace WordProcessor
             this.addToEndOfEveryLineToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addToStartOfEveryLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNumberToEveryLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNumberToEveryUsedLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.View_toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toggleStatusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modified_label2 = new System.Windows.Forms.Label();
@@ -397,7 +398,8 @@ namespace WordProcessor
             this.addIndentEveryXLinesToolStripMenuItem1,
             this.addToEndOfEveryLineToolStripMenuItem1,
             this.addToStartOfEveryLineToolStripMenuItem,
-            this.addNumberToEveryLineToolStripMenuItem});
+            this.addNumberToEveryLineToolStripMenuItem,
+            this.addNumberToEveryUsedLineToolStripMenuItem});
             this.Add_toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("Add_toolStripDropDownButton3.Image")));
             this.Add_toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Add_toolStripDropDownButton3.Name = "Add_toolStripDropDownButton3";
@@ -407,30 +409,37 @@ namespace WordProcessor
             // addIndentEveryXLinesToolStripMenuItem1
             // 
             this.addIndentEveryXLinesToolStripMenuItem1.Name = "addIndentEveryXLinesToolStripMenuItem1";
-            this.addIndentEveryXLinesToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
+            this.addIndentEveryXLinesToolStripMenuItem1.Size = new System.Drawing.Size(243, 22);
             this.addIndentEveryXLinesToolStripMenuItem1.Text = "Add Indent Every X Lines";
             this.addIndentEveryXLinesToolStripMenuItem1.Click += new System.EventHandler(this.addIndentEveryXLinesToolStripMenuItem1_Click);
             // 
             // addToEndOfEveryLineToolStripMenuItem1
             // 
             this.addToEndOfEveryLineToolStripMenuItem1.Name = "addToEndOfEveryLineToolStripMenuItem1";
-            this.addToEndOfEveryLineToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
+            this.addToEndOfEveryLineToolStripMenuItem1.Size = new System.Drawing.Size(243, 22);
             this.addToEndOfEveryLineToolStripMenuItem1.Text = "Add To End Of Every Line";
             this.addToEndOfEveryLineToolStripMenuItem1.Click += new System.EventHandler(this.addToEndOfEveryLineToolStripMenuItem1_Click);
             // 
             // addToStartOfEveryLineToolStripMenuItem
             // 
             this.addToStartOfEveryLineToolStripMenuItem.Name = "addToStartOfEveryLineToolStripMenuItem";
-            this.addToStartOfEveryLineToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.addToStartOfEveryLineToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.addToStartOfEveryLineToolStripMenuItem.Text = "Add To Start Of Every Line";
             this.addToStartOfEveryLineToolStripMenuItem.Click += new System.EventHandler(this.addToStartOfEveryLineToolStripMenuItem_Click);
             // 
             // addNumberToEveryLineToolStripMenuItem
             // 
             this.addNumberToEveryLineToolStripMenuItem.Name = "addNumberToEveryLineToolStripMenuItem";
-            this.addNumberToEveryLineToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.addNumberToEveryLineToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.addNumberToEveryLineToolStripMenuItem.Text = "Add Number To Every Line";
             this.addNumberToEveryLineToolStripMenuItem.Click += new System.EventHandler(this.addNumberToEveryLineToolStripMenuItem_Click);
+            // 
+            // addNumberToEveryUsedLineToolStripMenuItem
+            // 
+            this.addNumberToEveryUsedLineToolStripMenuItem.Name = "addNumberToEveryUsedLineToolStripMenuItem";
+            this.addNumberToEveryUsedLineToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.addNumberToEveryUsedLineToolStripMenuItem.Text = "Add Number To Every Used Line";
+            this.addNumberToEveryUsedLineToolStripMenuItem.Click += new System.EventHandler(this.addNumberToEveryUsedLineToolStripMenuItem_Click);
             // 
             // View_toolStripDropDownButton3
             // 
@@ -497,7 +506,7 @@ namespace WordProcessor
             this.ver_label.Name = "ver_label";
             this.ver_label.Size = new System.Drawing.Size(37, 15);
             this.ver_label.TabIndex = 15;
-            this.ver_label.Text = "v0.9.6";
+            this.ver_label.Text = "v0.9.7";
             // 
             // wordwrap_label2
             // 
@@ -673,6 +682,7 @@ namespace WordProcessor
         private System.Windows.Forms.ToolStripMenuItem addNumberToEveryLineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sAVEDTextColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uNSAVEDTextColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNumberToEveryUsedLineToolStripMenuItem;
     }
 }
 
