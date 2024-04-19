@@ -74,7 +74,7 @@ namespace WordProcessor
 
             //load settings
             LoadFormSize();
-            LoadFontSizeValue();//load font size
+            //LoadFontSizeValue();//load font size
             LoadFontNameFromJson();
             //FontSettingsManager.LoadFontSettings();
             fileTextOutput.Font = new Font(fileTextOutput.Font.FontFamily, fontSize, fileTextOutput.Font.Style);//set font size
@@ -880,12 +880,15 @@ namespace WordProcessor
 
                 // set the new font size
                 richTextBox.SelectionFont = new Font(richTextBox.SelectionFont.FontFamily, fontSize, previousFontStyle);
-                SaveFontSizeValue(fontSize);
+                //SaveFontSizeValue(fontSize);
                 // restore the selection and previous font style
                 //richTextBox.Select(selectionStart, selectionLength);
                 //richTextBox.SelectionFont = new Font(richTextBox.Font, previousFontStyle);
             }
         }
+
+        //NEED TO ADD BUTTON TO SET DEFUALT SAVED FONT SIZE
+        /*
         private void SaveFontSizeValue(int value)
         {
             var data = new { Value = value };
@@ -911,7 +914,7 @@ namespace WordProcessor
             }
 
             return 0;
-        }
+        }*/
 
         private int lineToIndent;
         private int indentCount;
