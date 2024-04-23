@@ -8,7 +8,7 @@ using System.Text;
 
 namespace WordProcessor
 {
-    public class MyForm : Form
+    public class MainProgram : Form
     {
         static List<string> dictionary = new List<string>();
         [STAThread]
@@ -41,7 +41,7 @@ namespace WordProcessor
 
         private TextBox replacebox2;
         private Label replacelabel2;
-        public MyForm()
+        public MainProgram()
         {
             this.Text = "Text File Modder";
             this.ClientSize = new Size(800, 600);
