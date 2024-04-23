@@ -45,13 +45,11 @@ namespace WordProcessor
 
             LoadUnsaveTxtTextColor();
             LoadSaveTxtTextColor();
-            modified_label2.Text = "SAVED";
-            modified_label2.ForeColor = savetextColor;
+            SavedText();
             //get file path from args
             if (_args.Length > 0)
             {
-                modified_label2.Text = "SAVED"; // change here to set it to SAVED when opening via extension
-                modified_label2.ForeColor = savetextColor;
+                SavedText();
                 if (File.Exists(_args[0]))
                 {
                     //openfile on load (extension)
@@ -1948,7 +1946,13 @@ namespace WordProcessor
             modified_label2.Text = "SAVED";
             modified_label2.ForeColor = savetextColor;
         }
+        private void UnsavedText()
+        {
+            this.Text = "* Notepad On CrAcK";
+            modified_label2.Text = "*unsaved*";
+            modified_label2.ForeColor = unsavedtextColor;
 
+        }
         private void HideStatusBar()
         {
             linecol_label.Visible = false;
@@ -2009,9 +2013,7 @@ namespace WordProcessor
             finalReadString = reader.ReadToEnd();
             fileTextOutput.Text = finalReadString;
             reader.Close();
-            this.Text = "Notepad On CrAcK";
-            modified_label2.Text = "SAVED";
-            modified_label2.ForeColor = savetextColor;
+            SavedText();
             ClearUndoStack();
         }
         //on form close
@@ -2158,11 +2160,7 @@ namespace WordProcessor
             //IsFileTextChanged();
             if (!isLoading)
             {
-                Console.WriteLine("Full file path: " + fullFilePath);
-
-                this.Text = "* Notepad On CrAcK";
-                modified_label2.Text = "*unsaved*";
-                modified_label2.ForeColor = unsavedtextColor;
+                UnsavedText();
             }
         }
 
